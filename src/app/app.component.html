@@ -1,0 +1,50 @@
+<h1>Kape Cake House Ordering System</h1>
+<div class="container">
+    <div class="menu">
+      <div class="selection-container">
+        <h3>Cakes</h3>
+        <div class="item-list">
+          <div *ngFor="let cake of cakeOptions" class="menu-item" (click)="addOrder(cake)">
+            {{ cake.split(',')[0] }}
+          </div>
+        </div>
+      </div>
+  
+      <div class="selection-container">
+        <h3>Coffee</h3>
+        <div class="item-list">
+          <div *ngFor="let coffee of coffeeOptions" class="menu-item" (click)="addOrder(coffee)">
+            {{ coffee.split(',')[0] }}
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <div class="orders">
+    <h3>Orders</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders.controls; index as i">
+          <td>{{ order.value.name }}</td>
+          <td><input type="number" class="qty" [(ngModel)]="order.value.quantity" min="1" (input)="updateTotal()"></td>
+          <td>{{ order.value.price }}</td>
+          <td>{{ order.value.price * order.value.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div>
+      <h4>Total Amount: {{ updateTotal() }} </h4> 
+     
+    </div>
+  </div>
+</div>
+  

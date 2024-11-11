@@ -1,0 +1,41 @@
+h1 {
+    margin-left: 20px;
+}
+
+.container {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    width: 50%;
+}
+
+.selection-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.item-list {
+    max-height: 300px;
+}
+
+.menu-item {
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.orders {
+    width: 50%;
+    padding: 20px;
+}
+
+td {
+    width: 20%;
+}
+
+.qty {
+    margin-left: 5%;
+    width: 30%;
+}
